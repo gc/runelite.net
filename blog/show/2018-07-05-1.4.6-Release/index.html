@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><meta name="google-site-verification" content="_wxrTRAcgx3bHof630x75_YKSXklUH55NkOAA_5GfmU"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><title>1.4.6 Release - RuneLite</title><meta name="description" content="Lightbox and Varrock Museum quiz solver, config panel tags and favorites, Discord bosses &amp; minigames"><meta name="author" content="Tomas"><script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes"></script><script type="text/javascript">!function(i){if(i.search){var l={};i.search.slice(1).split("&").forEach(function(i){var a=i.split("=");l[a[0]]=a.slice(1).join("=").replace(/~and~/g,"&")}),void 0!==l.p&&window.history.replaceState(null,null,i.pathname.slice(0,-1)+(l.p||"")+(l.q?"?"+l.q:"")+i.hash)}}(window.location)</script><link href="/static/css/99.a04f18ec.chunk.css" rel="stylesheet"><link href="/static/css/main.6102f11b.chunk.css" rel="stylesheet"><script charset="utf-8" src="/static/js/3.2343c2d9.chunk.js"></script><script charset="utf-8" src="/static/js/43.09a305fc.chunk.js"></script></head><body><div id="root"><div style="height: 100%;"><div class="fixed-top animated loader" style="display: none;"></div><nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white"><a class="navbar-brand" activeclassname="active" href="/"><img src="/img/logo.png" class="icon" alt="RuneLite"> Home</a><input type="checkbox" id="navbar-check-box"><label for="navbar-check-box" class="navbar-toggler"><span class="navbar-toggler-icon"></span></label><div class="collapse navbar-collapse" id="navbar"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" activeclassname="active" href="/features"><i class="fas fa-cogs"></i> Features</a></li><li class="nav-item"><a class="nav-link" activeclassname="active" href="/blog"><i class="fas fa-newspaper"></i> Blog</a></li><li class="nav-item"><a class="nav-link" href="https://github.com/runelite/runelite/wiki"><i class="fas fa-file-alt"></i> Wiki</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown"><i class="fas fa-font"></i> API</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="https://static.runelite.net/api/http-service/">RuneLite HTTP API</a><a class="dropdown-item" href="https://static.runelite.net/api/runelite-api/">RuneLite API</a><a class="dropdown-item" href="https://static.runelite.net/api/runelite-client/">RuneLite Client API</a></div></li><li class="nav-item"><a class="nav-link" activeclassname="active" href="/tag"><i class="fas fa-code"></i> Tags</a></li></ul><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="https://discord.gg/mePCs8U" title="Discord"><i class="fab fa-discord"></i><span class="d-lg-none"> Discord</span></a></li><li class="nav-item"><a class="nav-link" href="https://twitter.com/RuneLiteClient" title="Twitter"><i class="fab fa-twitter"></i><span class="d-lg-none"> Twitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/runelite" title="GitHub"><i class="fab fa-github"></i><span class="d-lg-none"> GitHub</span></a></li><li class="nav-item"><a class="nav-link" href="https://www.patreon.com/runelite"><i class="fab fa-patreon"></i> Become a patron</a></li><li class="nav-item"><a class="nav-link" href="https://github.com/runelite/runelite/stargazers"><i class="fas fa-star"></i>  Stargazers</a></li><li class="nav-item"><form class="form-inline"><button class="btn btn-primary" type="button"><i class="fas fa-user"></i> Login</button></form></li></ul></div></nav><div class="container" id="layout"><h1>1.4.6 Release</h1><p class="text-muted"><span title="Thu Jul 05 2018 07:00:00 GMT+0000 (Coordinated Universal Time)">last year</span> by Tomas</p><hr><div class="markdown-body"><div><p>A lightbox solver plugin was added which tells you the pattern to solve lightboxes after
+observing a few of the switches. Contributed by <a href="https://github.com/Adam-">@Adam-</a>.</p>
+<p><img src="/img/blog/1.4.6-Release/lightboxsolver.png" alt="lightboxsolver"></p>
+<p>A helper for Varrock Museum Quiz was added as well that highlights correct answer to
+questions in Varrock Museum basement. Thanks to <a href="https://github.com/vikke1234">@vikke1234</a>
+who contributed this feature.</p>
+<p><img src="/img/blog/1.4.6-Release/varrockmuseumsolver.png" alt="varrockmuseumsolver"></p>
+<p>The configuration panel was significantly improved thanks to big contribution from
+<a href="https://github.com/takuyakanbr">@takuyakanbr</a>. Some of the improvements are:</p>
+<ul>
+<li>Each plugin now has a short description when hovered</li>
+<li>Each plugin now has tags that will make plugins easier to search for</li>
+<li>Plugins can now be pinned to the top of the panel (a new star icon was added next to each plugin name
+that when clicked will pin the config option to top)</li>
+<li>Search bar in configuration panel will now always stay on top</li>
+<li>Each configuration page for plugins now have back and on/off buttons at the top of panel</li>
+</ul>
+<p><img src="/img/blog/1.4.6-Release/configbackbutton.png" alt="configbackbutton">
+<img src="/img/blog/1.4.6-Release/configfavorites.png" alt="configfavorites">
+<img src="/img/blog/1.4.6-Release/configtags.png" alt="configtags">
+<img src="/img/blog/1.4.6-Release/configtooltip.png" alt="configtooltip"></p>
+<p>Thanks to another awesome contribution from <a href="https://github.com/PandahRS">@PandahRS</a> who spent
+a lot of time manually mapping a lot of RuneScape surface to regions, the Discord plugin now has
+a lot of new features, including display of <strong>city</strong> you are in, <strong>dungeon</strong> you are currently
+exploring, <strong>boss</strong> you are currently fighting and even <strong>minigame</strong> you are currently playing.</p>
+<p>Due to privacy reasons, these new location-based features are disabled in any PVP scenario, such
+as PVP worlds, High Risk worlds, DMM and Seasonal DMM worlds.</p>
+<p><img src="/img/blog/1.4.6-Release/discord1.png" alt="discord1">
+<img src="/img/blog/1.4.6-Release/discord2.png" alt="discord2"></p>
+<p>In addition to the highlighted features, there have been several other improvements and bugfixes this release:</p>
+<ul>
+<li>!total, !clues and !lvl commands now properly show ranks based on account types</li>
+<li>Plenty of new food types have been added to Item Stats plugin</li>
+<li>SOTD timer now properly works also for SOTL</li>
+<li>Obstacles for Agility Pyramid entrance and Morytania pirate ship have been added to Agility plugin</li>
+<li>Al-Kharid lap counter has been fixed</li>
+<li>XP tracker now shows dots instead of commas to follow OSRS style of displaying numbers</li>
+<li>Fishing plugin now supports all types of eels</li>
+<li>Bug with inventory tagger plugin showing items with different models depending on the quantity
+incorrectly have been fixed</li>
+</ul>
+<p>Enjoy!</p>
+<p>~ Tomas</p>
+<h3 id="new-commits">New commits</h3>
+<p>We had 15 contributors this release!</p>
+<pre><code>Adam (8):
+      runelite-api: make HashTable a generic
+      Calculate and store widget parent id and position when the interfaces are rendered
+      Revert "Add ironman status and AccountType to API"
+      chat commands: fix to use exiting accounttype api
+      agility plugin: fix Al Kharid lap counter
+      puzzle solver: add lightbox solver
+      chat commands: store kill counts in config
+      Change Widget::parentId behavior to work again if the widget hasn't been drawn yet
+
+Damen (2):
+      Fix Dark Crab req lvl in skill calculator (#4071)
+      Prevent cannonball count conflicting with health bars (#2857)
+
+Gamer1120 (1):
+      Fix hiscore lookup for ironman in chat commands
+
+JHPinto (1):
+      slayer plugin: move item count overlay checks to render
+
+Jeremy Plsek (2):
+      item manager: add item outline caching
+      inventory tags: use item manager for outlines
+
+Jordan (1):
+      Ignore level goals which have been passed (#3805)
+
+Jordan Atwood (17):
+      item stats plugin: Add Edible seaweed
+      chat color: Fix description typo
+      Update Veng Other / Energy Transfer animation ID
+      Add Vengeance Other graphic ID
+      timers plugin: Check for Vengeance Other graphic
+      item stats: Add missing RFD foods
+      fishing plugin: Add cave eel and slimy eel spots
+      agility plugin: Add Lumbridge swamp cave shortcuts
+      item stats plugin: Add field ration
+      grand exchange plugin: Fix error message typos
+      grand exchange plugin: Clear render on empty string
+      item stats plugin: Fix import ordering
+      item stats plugin: Fix Zamorak brew stat changes
+      skill calculator: Fix combined items with decimals
+      item stats: Add negative attack bonus to wines
+      clues: Fix Cap'n Izzy No-Beard anagram clue
+      agility plugin: Add pyramid entrance obstacles
+
+Kamiel (1):
+      screen-markers: fix graphical bug
+
+Magic fTail (1):
+      AgilityPlugin: Add obstacles north of pirate ship (#4084)
+
+Max Weber (3):
+      mixins: Don't show siblings in dynamic widget's child lists
+      farmingtracker: Correct several patch timings
+      itemstats: Add variable healing food
+
+Nathen Sample (1):
+      Represent decimals as .'s not ,'s (#4059)
+
+PandahRS (5):
+      Make skilling activity configurable in Discord
+      Add bosses to Discord plugin
+      Add cities to Discord plugin
+      Add dungeons to discord plugin
+      Add minigames to Discord plugin
+
+Tomas Slusny (7):
+      Add ironman status and AccountType to API
+      Make SOTD/SOTL timer use chat messsage
+      Return preferredSize.width from TitleComponent
+      Make !clues command respect account type
+      Add logging of presence to DiscordService
+      Make Discord plugin more extensible/support region
+      Reset Discord state if now &gt; updated + timeout
+
+Viktor Horsmanheimo (2):
+      Add widget IDs for the varrock museum quiz
+      Add Varrock museum quiz solver
+
+takuyakanbr (5):
+      Add description and tags fields to PluginDescriptor
+      config panel: change plugin search to use plugin name + tags
+      config panel: add ability to pin plugins to the top
+      config panel: keep search bar at the top while scrolling Add back and toggle buttons at the top of plugin configuration pages
+      Replace fields in ConfigGroup with a single `value` field
+</code></pre></div></div><div><hr>Developed with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> using <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://reactjs.org/">React</a> and <a href="https://fontawesome.com/">Font Awesome</a><a href="http://localhost:8000/atom.xml" class="float-right"><i class="fas fa-rss"></i> Subscribe via RSS</a></div></div></div></div><script>!function(o){function e(e){for(var c,f,d=e[0],t=e[1],r=e[2],a=0,n=[];a<d.length;a++)f=d[a],b[f]&&n.push(b[f][0]),b[f]=0;for(c in t)Object.prototype.hasOwnProperty.call(t,c)&&(o[c]=t[c]);for(s&&s(e);n.length;)n.shift()();return i.push.apply(i,r||[]),u()}function u(){for(var e,c=0;c<i.length;c++){for(var f=i[c],d=!0,t=1;t<f.length;t++){var r=f[t];0!==b[r]&&(d=!1)}d&&(i.splice(c--,1),e=l(l.s=f[0]))}return e}var f={},n={101:0},b={101:0},i=[];function l(e){if(f[e])return f[e].exports;var c=f[e]={i:e,l:!1,exports:{}};return o[e].call(c.exports,c,c.exports,l),c.l=!0,c.exports}l.e=function(i){var e=[];n[i]?e.push(n[i]):0!==n[i]&&{9:1,10:1,11:1}[i]&&e.push(n[i]=new Promise(function(e,d){for(var c="static/css/"+({}[i]||i)+"."+{1:"31d6cfe0",2:"31d6cfe0",3:"31d6cfe0",4:"31d6cfe0",5:"31d6cfe0",6:"31d6cfe0",7:"31d6cfe0",8:"31d6cfe0",9:"28784c13",10:"4173d95d",11:"16be6310",12:"31d6cfe0",13:"31d6cfe0",14:"31d6cfe0",15:"31d6cfe0",16:"31d6cfe0",17:"31d6cfe0",18:"31d6cfe0",19:"31d6cfe0",20:"31d6cfe0",21:"31d6cfe0",22:"31d6cfe0",23:"31d6cfe0",24:"31d6cfe0",25:"31d6cfe0",26:"31d6cfe0",27:"31d6cfe0",28:"31d6cfe0",29:"31d6cfe0",30:"31d6cfe0",31:"31d6cfe0",32:"31d6cfe0",33:"31d6cfe0",34:"31d6cfe0",35:"31d6cfe0",36:"31d6cfe0",37:"31d6cfe0",38:"31d6cfe0",39:"31d6cfe0",40:"31d6cfe0",41:"31d6cfe0",42:"31d6cfe0",43:"31d6cfe0",44:"31d6cfe0",45:"31d6cfe0",46:"31d6cfe0",47:"31d6cfe0",48:"31d6cfe0",49:"31d6cfe0",50:"31d6cfe0",51:"31d6cfe0",52:"31d6cfe0",53:"31d6cfe0",54:"31d6cfe0",55:"31d6cfe0",56:"31d6cfe0",57:"31d6cfe0",58:"31d6cfe0",59:"31d6cfe0",60:"31d6cfe0",61:"31d6cfe0",62:"31d6cfe0",63:"31d6cfe0",64:"31d6cfe0",65:"31d6cfe0",66:"31d6cfe0",67:"31d6cfe0",68:"31d6cfe0",69:"31d6cfe0",70:"31d6cfe0",71:"31d6cfe0",72:"31d6cfe0",73:"31d6cfe0",74:"31d6cfe0",75:"31d6cfe0",76:"31d6cfe0",77:"31d6cfe0",78:"31d6cfe0",79:"31d6cfe0",80:"31d6cfe0",81:"31d6cfe0",82:"31d6cfe0",83:"31d6cfe0",84:"31d6cfe0",85:"31d6cfe0",86:"31d6cfe0",87:"31d6cfe0",88:"31d6cfe0",89:"31d6cfe0",90:"31d6cfe0",91:"31d6cfe0",92:"31d6cfe0",93:"31d6cfe0",94:"31d6cfe0",95:"31d6cfe0",96:"31d6cfe0",97:"31d6cfe0",98:"31d6cfe0",100:"31d6cfe0"}[i]+".chunk.css",t=l.p+c,f=document.getElementsByTagName("link"),r=0;r<f.length;r++){var a=(o=f[r]).getAttribute("data-href")||o.getAttribute("href");if("stylesheet"===o.rel&&(a===c||a===t))return e()}var n=document.getElementsByTagName("style");for(r=0;r<n.length;r++){var o;if((a=(o=n[r]).getAttribute("data-href"))===c||a===t)return e()}var u=document.createElement("link");u.rel="stylesheet",u.type="text/css",u.onload=e,u.onerror=function(e){var c=e&&e.target&&e.target.src||t,f=new Error("Loading CSS chunk "+i+" failed.\n("+c+")");f.request=c,d(f)},u.href=t,document.getElementsByTagName("head")[0].appendChild(u)}).then(function(){n[i]=0}));var f=b[i];if(0!==f)if(f)e.push(f[2]);else{var c=new Promise(function(e,c){f=b[i]=[e,c]});e.push(f[2]=c);var d,t=document.getElementsByTagName("head")[0],r=document.createElement("script");r.charset="utf-8",r.timeout=120,l.nc&&r.setAttribute("nonce",l.nc),r.src=l.p+"static/js/"+({}[i]||i)+"."+{1:"2e472db0",2:"b1eb38e2",3:"2343c2d9",4:"fcb8d2bf",5:"852fe3fc",6:"46194c17",7:"a10a3beb",8:"dd7c3c1c",9:"76f4724e",10:"6cbb75f1",11:"d09eff85",12:"cbbd2242",13:"6516f367",14:"d5766e01",15:"9afa899b",16:"695ada93",17:"40dca083",18:"35e5a7d6",19:"46ca5b2d",20:"a71350b7",21:"4a9749e5",22:"ac26d1dd",23:"9a3041dd",24:"314140a8",25:"dc69ef24",26:"3a4e041c",27:"5550551f",28:"933556b6",29:"3f68e437",30:"e61a52ae",31:"98ef0845",32:"ae50c634",33:"f9121a0f",34:"eac5b414",35:"c6040d87",36:"2516243a",37:"5c8e3fad",38:"55772bae",39:"cb60bec0",40:"72ee6fb1",41:"4a430b6b",42:"139a88cb",43:"09a305fc",44:"d148b4d6",45:"184fd71f",46:"7a241a60",47:"31907e5c",48:"b93dca50",49:"5d083116",50:"02d8884a",51:"1c626da2",52:"e7bfde9d",53:"8217d449",54:"5e763386",55:"a2695b58",56:"7d4c2d23",57:"d188f9b8",58:"438fce5e",59:"fc98fc4a",60:"cd8715e4",61:"54ce5ef4",62:"9bfe5cba",63:"8fde7680",64:"edb27c61",65:"387e4efb",66:"b4ec8189",67:"0ea974d7",68:"8581faa2",69:"ead07ef6",70:"bfbdd8c2",71:"5b08021a",72:"1b927fbf",73:"da805172",74:"1ea2b2d7",75:"4b9c034a",76:"0b9c22e2",77:"f9903c7c",78:"ced5c1b4",79:"4b90e86f",80:"5f6424f7",81:"902c75eb",82:"1fae6666",83:"4a197018",84:"8819c6be",85:"6b865622",86:"9496ea46",87:"52929308",88:"70f3e18e",89:"4129201a",90:"cd804217",91:"4d4819df",92:"5ecaa2a9",93:"a04960aa",94:"ff421be2",95:"3f3d1428",96:"86d88644",97:"5656119d",98:"469187eb",100:"2aaf7d5b"}[i]+".chunk.js",d=function(e){r.onerror=r.onload=null,clearTimeout(a);var c=b[i];if(0!==c){if(c){var f=e&&("load"===e.type?"missing":e.type),d=e&&e.target&&e.target.src,t=new Error("Loading chunk "+i+" failed.\n("+f+": "+d+")");t.type=f,t.request=d,c[1](t)}b[i]=void 0}};var a=setTimeout(function(){d({type:"timeout",target:r})},12e4);r.onerror=r.onload=d,t.appendChild(r)}return Promise.all(e)},l.m=o,l.c=f,l.d=function(e,c,f){l.o(e,c)||Object.defineProperty(e,c,{enumerable:!0,get:f})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(c,e){if(1&e&&(c=l(c)),8&e)return c;if(4&e&&"object"==typeof c&&c&&c.__esModule)return c;var f=Object.create(null);if(l.r(f),Object.defineProperty(f,"default",{enumerable:!0,value:c}),2&e&&"string"!=typeof c)for(var d in c)l.d(f,d,function(e){return c[e]}.bind(null,d));return f},l.n=function(e){var c=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(c,"a",c),c},l.o=function(e,c){return Object.prototype.hasOwnProperty.call(e,c)},l.p="/",l.oe=function(e){throw console.error(e),e};var c=window.webpackJsonp=window.webpackJsonp||[],d=c.push.bind(c);c.push=e,c=c.slice();for(var t=0;t<c.length;t++)e(c[t]);var s=d;u()}([])</script><script src="/static/js/99.a563c692.chunk.js"></script><script src="/static/js/main.91ac4cba.chunk.js"></script></body></html>
