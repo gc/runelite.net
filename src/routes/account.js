@@ -19,6 +19,7 @@ import { getGe } from '../modules/ge'
 import { getLoot } from '../modules/loot'
 import Home from './account/home'
 import GrandExchange from './account/grand-exchange'
+import AdventureLog from './account/adventure-log'
 import LootTracker from './account/loot-tracker'
 import NotFound from '../components/not-found'
 import './account.scss'
@@ -62,6 +63,13 @@ const menu = [
           qty: drop.qty
         }))
       }))
+  },
+  {
+    tag: 'adventure-log',
+    label: 'Adventure Log',
+    icon: 'fa-fw fas fa-scroll',
+    component: AdventureLog,
+    data: data => ({})
   }
 ]
 

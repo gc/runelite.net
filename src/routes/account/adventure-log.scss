@@ -1,0 +1,19 @@
+.adventure-log.card .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left-side {
+    display: flex;
+    align-items: center;
+
+    .thumbnail {
+      min-width: 50px;
+    }
+  }
+
+  .time-ago {
+    color: #ffffff85;
+    margin-left: 15px;
+  }
+}
