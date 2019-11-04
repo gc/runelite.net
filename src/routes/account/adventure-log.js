@@ -19,113 +19,62 @@ import adventureLogData from './data'
 
 // this should be moved to its own file
 const LogTypes = {
-  CLUE: {
-    title: 'Clue Scroll',
-    card: ({ logData: { drops, difficulty } }) => {
-      const scrollName = `${difficulty.toTitleCase()} Clue Scroll`
-      if (drops.length === 1) {
-        return [
-          `I received an item from a ${scrollName}.`,
-          `https://static.runelite.net/cache/item/icon/${drops[0].id}.png`
-        ]
-      }
+  CLUE: ({ drops, difficulty }) => {
+    const scrollName = `${difficulty.toTitleCase()} Clue Scroll`
+    if (drops.length === 1) {
       return [
-        <div>
-          I completed a {scrollName} and received...
-          <br />
-          <br />
-          {drops.map(drop => (
-            <img
-              src={`https://static.runelite.net/cache/item/icon/${drop.id}.png`}
-              alt=""
-            />
-          ))}
-        </div>
+        `I received an item from a ${scrollName}.`,
+        `https://static.runelite.net/cache/item/icon/${drops[0].id}.png`
       ]
     }
+    return [` I completed a ${scrollName} and received...`]
   },
-  MINIGAME: {
-    title: 'Minigame',
-    card: log => {
-      if (log.logData.minigame === 'Castle Wars') {
-        return [
-          `I ${log.logData.didWin ? 'won' : 'lost'} a game of Castle Wars.`
-        ]
-      }
+  MINIGAME: log => {
+    if (log.minigame === 'Castle Wars') {
+      return [`I ${log.didWin ? 'won' : 'lost'} a game of Castle Wars.`]
+    }
 
-      if (log.logData.minigame === 'Inferno') {
-        return [`I completed the Inferno.`]
-      }
+    if (log.minigame === 'Inferno') {
+      return [`I completed the Inferno.`]
     }
   },
-  RAID: {
-    title: 'Chambers of Xeric',
-    card: ({ logData: { drops } }) => {
-      if (drops.length === 1) {
-        return [
-          `I received an item from the Chambers of Xeric.`,
-          `https://static.runelite.net/cache/item/icon/${drops[0].id}.png`
-        ]
-      }
+  RAID: ({ drops }) => {
+    if (drops.length === 1) {
       return [
-        <div>
-          I completed the Chambers of Xeric and received...
-          <br />
-          <br />
-          {drops.map(drop => (
-            <img
-              src={`https://static.runelite.net/cache/item/icon/${drop.id}.png`}
-              alt=""
-            />
-          ))}
-        </div>
+        `I received an item from the Chambers of Xeric.`,
+        `https://static.runelite.net/cache/item/icon/${drops[0].id}.png`
       ]
     }
+    return [' I completed the Chambers of Xeric and received...']
   },
-  PET: {
-    title: 'Pet',
-    card: ({ logData: { itemID } }) => [
-      `I got the Pet Name pet!`,
-      `https://static.runelite.net/cache/item/icon/${itemID}.png`
-    ]
-  },
-  DIARY_COMPLETION: {
-    title: 'Achievement Diary',
-    card: ({ logData: { difficulty, region } }) => [
-      `I completed the ${difficulty.toTitleCase()} ${region} diary.`
-    ]
-  },
-  QUEST_COMPLETION: {
-    title: 'Quest',
-    card: ({ logData: { quest } }) => [`I finished the ${quest} quest.`]
-  },
-  SLAYER_TASK: {
-    title: 'Slayer Task',
-    card: ({ logData: { amount, task } }) => [`I slayed ${amount} ${task}.`]
-  },
-  RARE_DROPS: {
-    title: 'Rare Drop',
-    card: ({ logData: { itemID, monster } }) => [
-      `I received a Item Name from ${monster}`,
-      `https://static.runelite.net/cache/item/icon/${itemID}.png`
-    ]
-  },
-  LEVEL_UP: {
-    title: 'Level Up',
-    card: ({ logData: { level, skill } }) => [
-      `I leveled up to ${level} ${skill.toLowerCase().toTitleCase()}.`,
-      `/img/skillicons/${skill}.png`
-    ]
-  }
+  PET: ({ itemID }) => [
+    `I got the Pet Name pet!`,
+    `https://static.runelite.net/cache/item/icon/${itemID}.png`
+  ],
+  DIARY_COMPLETION: ({ difficulty, region }) => [
+    `I completed the ${difficulty.toTitleCase()} ${region} diary.`
+  ],
+  QUEST_COMPLETION: ({ quest }) => [`I finished the ${quest} quest.`],
+  SLAYER_TASK: ({ amount, task }) => [`I slayed ${amount} ${task}.`],
+  RARE_DROPS: ({ itemID, monster }) => [
+    `I received a Item Name from ${monster}`,
+    `https://static.runelite.net/cache/item/icon/${itemID}.png`
+  ],
+  LEVEL_UP: ({ level, skill }) => [
+    `I leveled up to ${level} ${skill.toLowerCase().toTitleCase()}.`,
+    `/img/skillicons/${skill}.png`
+  ],
+  BOSS_KILLS: ({ monster, amount }) => [`I killed ${monster} ${amount} times.`]
 }
 
 const buildLogCard = log => {
-  const logType = LogTypes[log.logType]
-  if (!logType) return null
+  const renderLog = LogTypes[log.logType]
+  if (!renderLog) {
+    console.error(`Invalid type: ${log.logType}`)
+    return
+  }
 
-  const { title, card } = logType
-
-  const [component, image] = card(log)
+  const [component, image] = renderLog(log.logData)
 
   return (
     <div class="adventure-log card mb-2">
@@ -140,6 +89,17 @@ const buildLogCard = log => {
         </div>
         <small class="time-ago">{ago(new Date(log.time * 1000))}</small>
       </div>
+
+      {log.logData.drops && log.logData.drops.length > 1 && (
+        <div class="card-footer">
+          {log.logData.drops.map(drop => (
+            <img
+              src={`https://static.runelite.net/cache/item/icon/${drop.id}.png`}
+              alt=""
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -151,10 +111,10 @@ const handleChange = (event, setLootFilter) =>
 
 const LootTracker = ({ loot, lootFilter, setLootFilter }) => (
   <Fragment>
-    <SearchBar
+    {/*<SearchBar
       value={lootFilter.name}
       onInput={e => handleChange(e, setLootFilter)}
-    />
+    />*/}
     <div>{adventureLogData.map(buildLogCard)}</div>
   </Fragment>
 )
