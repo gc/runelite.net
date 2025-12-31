@@ -57,6 +57,18 @@ video {
   z-index: 9999;
   max-height: 300px;
   overflow-y: auto;
+  background: #0e0d0d;
+}
+
+.dropdown-item {
+  color: rgb(226, 226, 226);
+  padding: 0.45rem 1.5rem;
+}
+
+.dropdown-item:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-decoration: underline;
 }
 
 .dropdown {
