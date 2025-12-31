@@ -178,3 +178,8 @@ video {
 .octicon {
   display: none;
 }
+
+.btn-primary:focus,
+.btn-primary.focus {
+  background: var(--adam-amber);
+}
