@@ -20,7 +20,7 @@ nav {
 }
 
 .navbar-nav .nav-link:hover {
-  color: #dc8a00 !important;
+  color: var(--adam-amber) !important;
 }
 
 .navbar-nav .nav-icon {
@@ -52,7 +52,7 @@ nav {
 }
 
 .navbar-nav button:hover {
-  background: #dc8a00;
+  background: var(--adam-amber);
 }
 
 .navbar-nav .dropdown-menu {
@@ -68,7 +68,7 @@ nav {
 }
 
 .navbar-nav .dropdown-menu .dropdown-item:is(:hover, :focus) {
-  color: #dc8a00;
+  color: var(--adam-amber);
   background: inherit;
 }
 
@@ -125,7 +125,7 @@ nav {
   }
 
   .navbar-nav button:hover {
-    color: #dc8a00;
+    color: var(--adam-amber);
     background: none;
   }
 

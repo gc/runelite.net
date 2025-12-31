@@ -11,7 +11,7 @@ footer {
 }
 
 footer a {
-  color: #dc8a00;
+  color: var(--adam-amber);
 }
 
 footer a:hover {
@@ -69,7 +69,7 @@ footer hr {
 }
 
 .content-section h1 {
-  border-bottom: 1px solid #dc8a00;
+  border-bottom: 1px solid var(--adam-amber);
   padding-bottom: 10px;
   display: inline-block;
   width: auto;

@@ -12,9 +12,13 @@
   src: url(~lato-font/fonts/lato-normal/lato-normal.woff);
 }
 
+:root {
+  --adam-amber: #dc8a00;
+}
+
 a,
 .page-link {
-  color: #dc8a00;
+  color: var(--adam-amber);
 }
 
 html,

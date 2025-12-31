@@ -55,7 +55,7 @@
 }
 
 #intro h1 span {
-  color: #dc8a00;
+  color: var(--adam-amber);
 }
 
 #intro p {
@@ -100,12 +100,12 @@
 }
 
 #intro .dropdown-item:hover {
-  color: #dc8a00;
+  color: var(--adam-amber);
   background-color: #dc8a001a;
 }
 
 #intro .dropdown-item:active {
-  background: #dc8a00;
+  background: var(--adam-amber);
   color: white;
 }
 
@@ -119,14 +119,14 @@
 }
 
 #intro #download #direct-download-btn {
-  background: #dc8a00 !important;
+  background: var(--adam-amber);
   font-weight: 600;
   text-shadow: 1px 1px #ad7008;
   width: 100% !important;
 }
 
 #intro #download button {
-  background: #dc8a00 !important;
+  background: var(--adam-amber) !important;
   border-left: 1px solid #ad7008 !important;
   border-radius: 0 0.25rem 0.25rem 0;
 }
@@ -138,7 +138,7 @@
 #intro .small h6 {
   font-size: 12px;
   font-weight: 700;
-  color: #dc8a00;
+  color: var(--adam-amber);
   margin: 10px 0 0;
 }
 

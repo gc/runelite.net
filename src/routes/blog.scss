@@ -7,7 +7,7 @@
 
   li::before {
     content: '\2022';
-    color: #dc8a00;
+    color: var(--adam-amber);
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -16,7 +16,7 @@
 }
 
 .news-page ol li::marker {
-  color: #dc8a00;
+  color: var(--adam-amber);
 }
 
 .news-page table {
